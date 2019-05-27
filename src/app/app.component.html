@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="main">
+  <div class="row">
+   <form class="box-shadow col"  #csvForm="ngForm" (ngSubmit)="lineChat(); csvForm.reset()">
+     <div class="form-group">
+            <label for="file">Choose File</label>
+            <input type="file"
+                   id="file"
+                    name="file"
+                    class="form-control"
+                    ngModel
+                    #nameField="ngModel"
+                    (change)="handleFileInput($event.target.files)"
+                    required>
+        </div>
+		<button class="btn" [disabled]="!csvForm.valid">View Chart</button>
+   </form>
+  </div>
+  <canvas  id="lineChart" ></canvas>
+</div>
+
+
+<router-outlet></router-outlet>
